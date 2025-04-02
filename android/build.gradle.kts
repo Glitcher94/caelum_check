@@ -26,7 +26,7 @@ allprojects {
             }
             credentials {
                 username = "mapbox"
-                password = (project.findProperty("MAPBOX_DOWNLOADS_TOKEN") as String?) ?: System.getenv("MAPBOX_DOWNLOADS_TOKEN") ?: ""
+                password = System.getenv("MAPBOX_DOWNLOADS_TOKEN") ?: throw GradleException("Missing MAPBOX_DOWNLOADS_TOKEN")
             }
         }
     }

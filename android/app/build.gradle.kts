@@ -23,9 +23,13 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+tasks.withType<JavaCompile> {
+    options.isIncremental = false
+}
+
 android {
     namespace = "com.example.caelum"
-    compileSdk = 33
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.caelum"
